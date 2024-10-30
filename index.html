@@ -1,215 +1,252 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Yogesh Personal Website</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <!-- CSS only -->
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            color: #333;
+        }
+        h1, h2 {
+            color: #0073e6; /* Accent Color */
+        }
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: #333;
+            color: #fff;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        /* Sections */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section-light {
+            background-color: #f4f4f9;
+        }
+        /* Cards for Projects */
+        .project-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        /* Skills Progress */
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .skill {
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+        }
+        /* Footer */
+        footer {
+            padding: 20px;
+            text-align: center;
+            background: #333;
+            color: #fff;
+        }
+    </style>
 </head>
+<body>
 
-<body style="font-size: 15px; background-color:#472D2D;">
-  <div class="MainDiv">
-    <center>
-      <img src="Yogesh Kolate.jpg" width="150" height="150">
-    </center>
+    <!-- Header / Hero Section -->
+    <header>
+        <h1>Yogesh Kolate</h1>
+        <p>Data Scientist | Big Data Professional</p>
+    </header>
 
+    <!-- About Section -->
+    <section class="section-light">
+        <h2>About Me</h2>
+        <p>CDAC Certified Big Data Professional having expertise in both Big Data analystics and software development.</p>
+    </section>
 
+    <!-- Projects Section -->
+    <section>
+        <h2>Projects</h2>
+        <div class="project-cards">
+            <div class="card">
+                <h3>Project 1</h3>
+                <p>RAG Based System Using mistral model</p>
+            </div>
+            <div class="card">
+                <h3>Project 2</h3>
+                <p>Chatbot using LLAMA 3.11</p>
+            </div>
+            <div class="card">
+                <h3>Project 3</h3>
+                <p>Survey Analysis Tool</p>
+            </div>
+        </div>
+    </section>
 
-    <center>
-      <h2 class="nameHeading"> Yogesh Kailas Kolate</h2>
-    </center>
+    <!-- Skills Section -->
+    <section class="section-light">
+        <h2>Skills</h2>
+        <div class="skills-container">
+          <!-- Existing Skill -->
+          <div class="skill">
+            <i class="fab fa-python"></i>
+            <p>Python</p>
+          </div>
+        
+          <!-- New Skills -->
+          <div class="skill">
+            <i class="fab fa-java"></i>
+            <p>Java</p>
+          </div>
+        
+          <div class="skill">
+            <i class="fas fa-database"></i>
+            <p>MongoDB</p>
+          </div>
+        
+          <div class="skill">
+            <i class="fas fa-robot"></i>
+            <p>Machine Learning</p>
+          </div>
+    
+          <div class="skill">
+            <i class="fas fa-brain"></i>
+            <p>Deep Learning</p>
+          </div>
 
+          <div class="skill">
+            <i class="fas fa-comments"></i>
+            <p>NLP</p>
+          </div>
 
-    <hr size="1">
+          <div class="skill">
+            <i class="fas fa-vial"></i>
+            <p>Selenium</p>
+          </div>
 
-    <h4>Professional Summery</h4>
-    <p>Experienced with .Net technologies as Junior Software Engineer at Zensar Technologies</p>
-    <p>CDAC Certified Big Data Professional having expertise in both Big Data analystics and software development </p>
+          <div class="skill">
+            <i class="fas fa-sitemap"></i>
+            <p>BeautifulSoup</p>
+          </div>
 
-    <hr size="1">
+          <div class="skill">
+            <i class="fas fa-bolt"></i>
+            <p>Apache Spark</p>
+          </div>
 
-    <h4>Education:</h4>
-    <h4>Academic Details:</h4>
-    <table id="Edu" class="table table-bordered table-condensed table-striped">
-      <tr>
-        <th><b> Name of Examination </b></th>
-        <th><b> Name of Institution </b></th>
-        <th><b> University/Board </b></th>
-        <th><b> Percentage/C.G.P.A </b></th>
-        <th><b> Passing Year </b></th>
-      </tr>
+          <div class="skill">
+            <i class="fas fa-server"></i>
+            <p>Hadoop</p>
+          </div>
 
-      <tr>
-        <td> Final Year E&TC </td>
-        <td> Government College of Engineering Jalgaon </td>
-        <td> North Maharashtra University Jalgaon </td>
-        <td> 7.99(C.G.P.A) </td>
-        <td> 2021 </td>
-      </tr>
+          <div class="skill">
+            <i class="fab fa-microsoft"></i>
+            <p>Azure</p>
+          </div>
 
-      <tr>
-        <td> Third Year E&TC </td>
-        <td> Government College of Engineering Jalgaon </td>
-        <td> North Maharashtra University Jalgaon </td>
-        <td> 7.68 (C.G.P.A) </td>
-        <td> 2020 </td>
-      </tr>
+          <div class="skill">
+            <i class="fab fa-aws"></i>
+            <p>AWS</p>
+          </div>
 
-      <tr>
-        <td> Second Year E&TC</td>
-        <td> Government College of Engineering Jalgaon </td>
-        <td> North Maharashtra University Jalgaon </td>
-        <td> 7.55 (C.G.P.A) </td>
-        <td> 2019 </td>
-      </tr>
+          <div class="skill">
+            <i class="fab fa-linux"></i>
+            <p>Linux</p>
+          </div>
 
-      <tr>
-        <td> Diploma E&TC </td>
-        <td> Government Polytechnic Nashik (Autonomous) </td>
-        <td> Government Polytechnic Nashik (Autonomous) </td>
-        <td> 84.19 </td>
-        <td> 2018 </td>
-      </tr>
+          <div class="skill">
+            <i class="fas fa-code"></i>
+            <p>C#</p>
+          </div>
 
-      <tr>
-        <td> SSC </td>
-        <td> Shri Gadgebaba High School Bhusawal </td>
-        <td> Maharashtra State Board of Secondary and Higher Secondary Education Pune </td>
-        <td> 88.60 </td>
-        <td> 2015 </td>
-      </tr>
-    </table>
+          <div class="skill">
+            <i class="fas fa-flask"></i>
+            <p>Flask</p>
+          </div>
 
+          <div class="skill">
+            <i class="fas fa-rocket"></i>
+            <p>FastAPI</p>
+          </div>
 
+          <div class="skill">
+            <i class="fas fa-check-double"></i>
+            <p>Pytest</p>
+          </div>
 
-    <hr size="1">
+          <div class="skill">
+            <i class="fas fa-brain"></i>
+            <p>Generative AI</p>
+          </div>
 
+          <div class="skill">
+            <i class="fas fa-camera"></i>
+            <p>OpenCV</p>
+          </div>
+            
+        </div>
+    </section>
 
+    <!-- Education Section -->
+    <section>
+        <h2>Education</h2>
+        <ul style="list-style: none; padding: 0;">
+            <li><strong>Post Graduate Diploma in Big Data Analytics</strong> - Centre For Development Of Advance Computing Mumbai</li>
+            <li><strong>Bachelor of Engineering in E&TC</strong> - Government College of Engineering Jalgaon (2021)</li>
+            <li><strong>Diploma in Electronics and Telecommunication</strong> - Government Polytechnic Nashik (2018)</li>
+        </ul>
+    </section>
 
-    <h4> <b> Key Skills: </b></h4>
-    <h4> <b> Technical: </b></h4>
+    <!-- Certifications Section -->
+    <section class="section-light">
+        <h2>Certifications</h2>
+        <ul style="list-style: none; padding: 0;">
+            <li>Certified Big Data Professional - CDAC Mumbai</li>
+            <li>Azure AZ-900</li>
+            <li>C# Programming Certification - Udemy</li>
+            <li>Full Stack Development Training - Zensar Technologies</li>
+        </ul>
+    </section>
 
-    <table>
-      <tr>
-        <td class="tech">Python</td>
-        <td class="tech">Big Data</td>
-        <td class="tech">C#</td>
-      </tr>
+    <!-- Contact Section -->
+    <section>
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me on social media or via email at yogesh7kolate@gmail.com</p>
+        <p style="font-size: 20px;">Find me on social media.</p>
+        <a href="https://www.facebook.com/yogesh.kolte.37"> <i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+        <a href="https://www.instagram.com/k_yogi7/"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+        <a href="https://twitter.com/yogesh_kolate"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+        <a href="https://www.linkedin.com/in/yogesh-kolate-b901a21b4/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    </section>
 
-      <tr>
-        <td class="tech">Linux</td>
-        <td class="tech">AWS </td>
-        <td class="tech">Azure</td>
-      </tr>
-
-      <tr>
-        <td class="tech">HTML5</td>
-        <td class="tech">CSS3</td>
-        <td class="tech">SQL</td>
-      </tr>
-
-      <tr>
-
-      </tr>
-
-      <tr>
-        <td class="tech">JAVA</td>
-        <td class="tech">ASP.NET</td>
-        <td class="tech">ASP.NET MVC</td>
-      </tr>
-
-    </table>
-
-
-
-    <hr size="1">
-
-    <h4>Training & Certification</h4>
-    <ul>
-      <li>Training on .Net Full Stack at Zensar Technologies</li>
-      <li>Certification in C# Programming (Udemy)</li>
-    </ul>
-
-    <hr size="1">
-
-    <h4><b> Projects: </b></h4>
-    <ul>
-      <li> Designed My Personal Website using <b>HTML 5, CSS3 </b></li>
-      <li> Human Sanitization Tunnel with Temperature Detection </li>
-      <li> Bidirectional Visitor Counter Using 8051 Microcontroller for Counting of Number of People Visiting Place
-      </li>
-      <li> Water Level Detector using Timer IC 555 </li>
-    </ul>
-
-    <hr size=1>
-
-    <h4>Technologies Learning</h4>
-    <ul>
-      <li>Machine Learning and Deep Learning</li>
-    </ul>
-
-    <hr size=1>
-
-    <h4><b> Extra-Curricular Activities: </b></h4>
-    <ul>
-      <li> Volunteer in CDAC Convocation Ceremony at CDAC Mumbai </li>
-      <li> Participated in BOLLYMANIA 2018 Competition National Level Cultural Event at Government College of
-        Engineering Jalgaon </li>
-      <li> Participated in Circuit Frenzy 2018 Competition National Level Cultural Event at Government College of
-        Engineering Jalgaon </li>
-      <li> Volunteer in E&TC Alumni Meet at Government Polytechnic Nashik </li>
-    </ul>
-
-    <hr size=1>
-
-    <h4><b> Workshop: </b></h4>
-    <ul>
-      <li> Completed Workshop on Arduino UNO Board at Government Polytechnic Nashik </li>
-      <li> One Day PCB Manufacturing at Copper Track Industry, Nashik </li>
-      <li> Attended Workshop on Satellite Communication at Institute of Satellite Telecommunication PVT LTD Kharadi,
-        Pune </li>
-      <li> Attended the Seminar on Entrepreneurship Development Organized Ministry of MSME Government of India at
-        Government College of Engineering Jalgaon </li>
-
-    </ul>
-
-    <hr size="1">
-
-    <h4><b> Personal Details: </b></h4>
-    <ul>
-      <li> Father’s Name: Kailas Gopal Kolate </li>
-      <li> Birth Date: 11 Nov 1999 </li>
-      <li> Languages Known: English, Hindi, Marathi </li>
-    </ul>
-
-    <hr size=1>
-
-    <script src="script.js"></script>
-  </div>
-
-
-
-  <footer class="footerText">
-    <p style="font-size: 20px;">Find me on social media.</p>
-    <a href="https://www.facebook.com/yogesh.kolte.37"> <i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-    <a href="https://www.instagram.com/k_yogi7/"><i class="fa fa-instagram w3-hover-opacity"></i></a>
-    <a href="https://twitter.com/yogesh_kolate"><i class="fa fa-twitter w3-hover-opacity"></i></a>
-    <a href="https://www.linkedin.com/in/yogesh-kolate-b901a21b4/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
-    <h5>Designed by Yogesh</h5>
-  </footer>
-
+    <!-- Footer -->
+    <footer>
+        <p>Designed by Yogesh | <a href="https://www.linkedin.com/in/yogesh-kolate-b901a21b4/" style="color: #0073e6;">LinkedIn</a></p>
+    </footer>
 
 </body>
-
 </html>
