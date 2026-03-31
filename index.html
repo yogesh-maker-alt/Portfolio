@@ -1,255 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<!--     <link rel="stylesheet" href="style.css"> -->
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            color: #333;
-        }
-        h1, h2 {
-            color: #0073e6; /* Accent Color */
-        }
-        /* Header */
-        header {
-            text-align: center;
-            padding: 40px 0;
-            background: #333;
-            color: #fff;
-        }
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-        }
-        /* Sections */
-        section {
-            padding: 60px 20px;
-            text-align: center;
-        }
-        .section-light {
-            background-color: #f4f4f9;
-        }
-        /* Cards for Projects */
-        .project-cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .card {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 300px;
-            padding: 20px;
-            transition: transform 0.3s;
-        }
-        .card:hover {
-            transform: scale(1.05);
-        }
-        /* Skills Progress */
-        .skills-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .skill {
-            width: 100px;
-            margin: 10px;
-            text-align: center;
-        }
-        /* Footer */
-        footer {
-            padding: 20px;
-            text-align: center;
-            background: #333;
-            color: #fff;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Maintenance Loader</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f172a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  .loader {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #334155;
+    border-top: 6px solid #38bdf8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .message {
+    font-size: 20px;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  .dots::after {
+    content: '';
+    display: inline-block;
+    animation: dots 1.5s steps(3, end) infinite;
+  }
+
+  @keyframes dots {
+    0% { content: ''; }
+    33% { content: '.'; }
+    66% { content: '..'; }
+    100% { content: '...'; }
+  }
+</style>
 </head>
 <body>
 
-    <!-- Header / Hero Section -->
-    <header>
-        <h1>Yogesh Kolate</h1>
-        <p>Data Scientist | Big Data Professional</p>
-    </header>
+<div class="container">
+  <div class="loader"></div>
+  <div class="message">
+    Portfolio is under maintenance<span class="dots"></span>
+  </div>
+</div>
 
-    <!-- About Section -->
-    <section class="section-light">
-        <h2>About Me</h2>
-        <p>Welcome! I am a Data Scientist with a robust skill set in Big Data, Machine Learning, Deep Learning, and software development, working at NeoSoft Private Limited. My journey began at Zensar Technologies, where I built API-driven applications using Python, Flask, and FastAPI and developed solutions on Azure. After a dynamic 10 months, I pursued advanced training in Big Data Analytics at CDAC, mastering tools like Spark, Kafka, and Hadoop while delving into machine learning and cloud computing on AWS and Azure. Currently, I serve as a Data Scientist at Neosoft Private Limited, where I dive into Generative AI, OpenCV, and complex data solutions. My recent projects include data scraping, building Retrieval-Augmented Generation (RAG) models, and deriving valuable insights from structured and unstructured data.
+<script>
+  // Optional: dynamic message change
+  const messages = [
+    "Portfolio is under maintenance",
+    "I'm making things awesome",
+    "Be right back!"
+  ];
 
-With each project, I strive to combine innovative technology with impactful insights, transforming data into powerful solutions.</p>
-    </section>
+  let index = 0;
+  const messageEl = document.querySelector(".message");
 
-    <!-- Projects Section -->
-    <section>
-        <h2>Projects</h2>
-        <div class="project-cards">
-            <div class="card">
-                <h3>Project 1</h3>
-                <p>RAG Based System Using mistral model</p>
-            </div>
-            <div class="card">
-                <h3>Project 2</h3>
-                <p>Chatbot using LLAMA 3.11</p>
-            </div>
-            <div class="card">
-                <h3>Project 3</h3>
-                <p>Survey Analysis Tool</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="section-light">
-        <h2>Skills</h2>
-        <div class="skills-container">
-          <!-- Existing Skill -->
-          <div class="skill">
-            <i class="fab fa-python"></i>
-            <p>Python</p>
-          </div>
-        
-          <!-- New Skills -->
-          <div class="skill">
-            <i class="fab fa-java"></i>
-            <p>Java</p>
-          </div>
-        
-          <div class="skill">
-            <i class="fas fa-database"></i>
-            <p>MongoDB</p>
-          </div>
-        
-          <div class="skill">
-            <i class="fas fa-robot"></i>
-            <p>Machine Learning</p>
-          </div>
-    
-          <div class="skill">
-            <i class="fas fa-brain"></i>
-            <p>Deep Learning</p>
-          </div>
-
-          <div class="skill">
-            <i class="fas fa-comments"></i>
-            <p>NLP</p>
-          </div>
-
-          <div class="skill">
-            <i class="fas fa-vial"></i>
-            <p>Selenium</p>
-          </div>
-
-          <div class="skill">
-            <i class="fas fa-sitemap"></i>
-            <p>BeautifulSoup</p>
-          </div>
-
-          <div class="skill">
-            <i class="fas fa-bolt"></i>
-            <p>Apache Spark</p>
-          </div>
-
-          <div class="skill">
-            <i class="fas fa-server"></i>
-            <p>Hadoop</p>
-          </div>
-
-          <div class="skill">
-            <i class="fab fa-microsoft"></i>
-            <p>Azure</p>
-          </div>
-
-          <div class="skill">
-            <i class="fab fa-aws"></i>
-            <p>AWS</p>
-          </div>
-
-          <div class="skill">
-            <i class="fab fa-linux"></i>
-            <p>Linux</p>
-          </div>
-
-          <div class="skill">
-            <i class="fas fa-code"></i>
-            <p>C#</p>
-          </div>
-
-          <div class="skill">
-            <i class="fas fa-flask"></i>
-            <p>Flask</p>
-          </div>
-
-          <div class="skill">
-            <i class="fas fa-rocket"></i>
-            <p>FastAPI</p>
-          </div>
-
-          <div class="skill">
-            <i class="fas fa-check-double"></i>
-            <p>Pytest</p>
-          </div>
-
-          <div class="skill">
-            <i class="fas fa-brain"></i>
-            <p>Generative AI</p>
-          </div>
-
-          <div class="skill">
-            <i class="fas fa-camera"></i>
-            <p>OpenCV</p>
-          </div>
-            
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section>
-        <h2>Education</h2>
-        <ul style="list-style: none; padding: 0;">
-            <li><strong>Post Graduate Diploma in Big Data Analytics</strong> - Centre For Development Of Advance Computing Mumbai</li>
-            <li><strong>Bachelor of Engineering in E&TC</strong> - Government College of Engineering Jalgaon (2021)</li>
-            <li><strong>Diploma in Electronics and Telecommunication</strong> - Government Polytechnic Nashik (2018)</li>
-        </ul>
-    </section>
-
-    <!-- Certifications Section -->
-    <section class="section-light">
-        <h2>Certifications</h2>
-        <ul style="list-style: none; padding: 0;">
-            <li>Certified Big Data Professional - CDAC Mumbai</li>
-            <li>Azure AZ-900</li>
-            <li>C# Programming Certification - Udemy</li>
-            <li>Full Stack Development Training - Zensar Technologies</li>
-        </ul>
-    </section>
-
-    <!-- Contact Section -->
-    <section>
-        <h2>Contact</h2>
-        <p>Feel free to reach out to me on social media or via email at yogesh7kolate@gmail.com</p>
-        <p style="font-size: 20px;">Find me on social media.</p>
-        <a href="https://www.facebook.com/yogesh.kolte.37"> <i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-        <a href="https://www.instagram.com/k_yogi7/"><i class="fa fa-instagram w3-hover-opacity"></i></a>
-        <a href="https://twitter.com/yogesh_kolate"><i class="fa fa-twitter w3-hover-opacity"></i></a>
-        <a href="https://www.linkedin.com/in/yogesh-kolate-b901a21b4/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>Designed by Yogesh | <a href="https://www.linkedin.com/in/yogesh-kolate-b901a21b4/" style="color: #0073e6;">LinkedIn</a></p>
-    </footer>
+  setInterval(() => {
+    index = (index + 1) % messages.length;
+    messageEl.childNodes[0].nodeValue = messages[index] + " ";
+  }, 3000);
+</script>
 
 </body>
 </html>
