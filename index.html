@@ -1,89 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Maintenance Loader</title>
-<style>
-  body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #0f172a;
-    color: #fff;
-    font-family: Arial, sans-serif;
-  }
+  <meta charset="UTF-8">
+  <title>Yogesh.website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  .container {
-    text-align: center;
-  }
+    body {
+      background: #f2f2f0;
+      color: #111;
+      font-family: Georgia, 'Times New Roman', serif;
+      min-height: 100vh;
+    }
 
-  .loader {
-    width: 60px;
-    height: 60px;
-    border: 6px solid #334155;
-    border-top: 6px solid #38bdf8;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: 0 auto 20px;
-  }
+    /* ── Navbar ── */
+    .nav-wrap {
+      display: flex;
+      justify-content: center;
+      padding: 24px 0 16px;
+    }
 
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+    .nav-pill {
+      display: flex;
+      align-items: center;
+      background: #f2f2f0;
+      border: 0.5px solid #ddd;
+      border-radius: 999px;
+      padding: 6px 8px;
+      gap: 2px;
+    }
 
-  .message {
-    font-size: 20px;
-    letter-spacing: 1px;
-    opacity: 0;
-    animation: fadeIn 2s ease forwards;
-  }
+    .nav-item {
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-family: Arial, sans-serif;
+      color: #999;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      background: transparent;
+      transition: background-color 0.8s ease, color 0.8s ease, border-color 0.8s ease, transform 0.8s ease;
+      font-weight: 400;
+      white-space: nowrap;
+      transform: scale(1);
+    }
 
-  @keyframes fadeIn {
-    to { opacity: 1; }
-  }
+    .nav-item:hover {
+      color: #333;
+      transform: scale(1.05);
+    }
 
-  .dots::after {
-    content: '';
-    display: inline-block;
-    animation: dots 1.5s steps(3, end) infinite;
-  }
+    .nav-item.active {
+      background: #fff;
+      border: 0.5px solid #ddd;
+      color: #111;
+      font-weight: 600;
+      transform: scale(1.05);
+    }
 
-  @keyframes dots {
-    0% { content: ''; }
-    33% { content: '.'; }
-    66% { content: '..'; }
-    100% { content: '...'; }
-  }
-</style>
+    /* ── Hero ── */
+    .hero {
+      padding: 40px 60px 48px;
+      max-width: 860px;
+    }
+
+    .section {
+      padding: 48px 60px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .section+.section {
+      border-top: 1px solid #e8e8e8;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: #111;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    .section-content {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #444;
+      max-width: 760px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 600;
+      line-height: 1.1;
+      color: #111;
+      margin-bottom: 8px;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    .hero .subtitle {
+      font-size: 38px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #aaa;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    .hero .subtitle em {
+      font-style: italic;
+      color: #aaa;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    /* ── CTA Row ── */
+    .cta-row {
+      display: flex;
+      align-items: center;
+      margin-top: 36px;
+      gap: 10px;
+      border: 1px solid #e8e8e8;
+      background-color: #e8e8e8;
+      padding: 8px;
+      border-radius: 999px;
+      width: fit-content;
+    }
+
+    .cta-btn {
+      background: #111;
+      color: #fff;
+      border: none;
+      padding: 16px 28px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      white-space: nowrap;
+      z-index: 1;
+    }
+
+    .cta-status {
+      border-radius: 999px;
+      padding: 14px 24px 14px 32px;
+      margin-left: -16px;
+      font-family: Arial, sans-serif;
+    }
+
+    .cta-status .status-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .cta-status .status-sub {
+      font-size: 13px;
+      color: #999;
+      margin-top: 2px;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 0.5px solid #e8e8e8;
+      margin: 0 60px;
+    }
+
+    /* ── Stats ── */
+    .stats {
+      padding: 48px 60px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .stats-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #111;
+      font-family: Arial, sans-serif;
+      margin-bottom: 24px;
+    }
+
+    .stats-grid {
+      display: flex;
+      gap: 80px;
+    }
+
+    .stat-num {
+      font-size: 48px;
+      font-weight: 400;
+      color: #111;
+      line-height: 1;
+    }
+
+    .stat-desc {
+      font-size: 13px;
+      color: #999;
+      margin-top: 8px;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #408A71;
+      padding: 40px 60px;
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 24px;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-link:hover {
+      opacity: 0.8;
+      transform: scale(1.1);
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="container">
-  <div class="loader"></div>
-  <div class="message">
-    Portfolio is under maintenance<span class="dots"></span>
+  <!-- Navbar -->
+  <div class="nav-wrap">
+    <nav class="nav-pill">
+      <a class="nav-item active" href="#home" onclick="setActive(this)">Home</a>
+      <a class="nav-item" href="work.html">Work</a>
+      <a class="nav-item" href="about.html">About</a>
+    </nav>
   </div>
-</div>
 
-<script>
-  // Optional: dynamic message change
-  const messages = [
-    "Portfolio is under maintenance",
-    "I'm making things awesome",
-    "Be right back!"
-  ];
+  <!-- Home Section -->
+  <section id="home" class="section hero">
+    <h1>Hey there!</h1>
+    <div class="subtitle">I'm an <em>AIML Engineer</em> transforming data into scalable AI products across GenAI, NLP,
+      ML, and Vision.</div>
+    <div class="cta-row">
+      <button class="cta-btn"></button>
+      <div class="cta-status">
+        <div class="status-title">Available for Freelance</div>
+        <div class="status-sub">2026</div>
+      </div>
+    </div>
+  </section>
 
-  let index = 0;
-  const messageEl = document.querySelector(".message");
+  <!-- Stats -->
+  <section class="section stats">
+    <div class="stats-label">At a Glance</div>
+    <div class="stats-grid">
+      <div>
+        <div class="stat-num">3+</div>
+        <div class="stat-desc">Years of Experience</div>
+      </div>
+      <div>
+        <div class="stat-num">7+</div>
+        <div class="stat-desc">Clients Across Industries</div>
+      </div>
+      <div>
+        <div class="stat-num">2</div>
+        <div class="stat-desc">Companies</div>
+      </div>
+    </div>
+  </section>
 
-  setInterval(() => {
-    index = (index + 1) % messages.length;
-    messageEl.childNodes[0].nodeValue = messages[index] + " ";
-  }, 3000);
-</script>
+  <footer class="footer">
+    <div class="footer-links">
+      <a class="footer-link" href="https://linkedin.com/in/yogesh-kolate-b901a21b4" target="_blank" title="LinkedIn"><i
+          class="fab fa-linkedin"></i></a>
+      <a class="footer-link" href="https://instagram.com/k_yogi7?igsh=dXN2ampyczZ0bmZj" target="_blank"
+        title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a class="footer-link" href="https://x.com/yogesh_kolate" target="_blank" title="X"><i
+          class="fab fa-x-twitter"></i></a>
+      <a class="footer-link" href="mailto:yogesh1199@outlook.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    function setActive(el) {
+      document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+      el.classList.add('active');
+    }
+  </script>
 
 </body>
+
 </html>

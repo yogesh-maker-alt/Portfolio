@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Yogesh.website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f2f2f0;
+            color: #111;
+            font-family: Georgia, 'Times New Roman', serif;
+            min-height: 100vh;
+        }
+
+        /* ── Navbar ── */
+        .nav-wrap {
+            display: flex;
+            justify-content: center;
+            padding: 24px 0 16px;
+        }
+
+        .nav-pill {
+            display: flex;
+            align-items: center;
+            background: #f2f2f0;
+            border: 0.5px solid #ddd;
+            border-radius: 999px;
+            padding: 6px 8px;
+            gap: 2px;
+        }
+
+        .nav-item {
+            padding: 8px 20px;
+            border-radius: 999px;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            color: #999;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            background: transparent;
+            transition: background-color 0.8s ease, color 0.8s ease, border-color 0.8s ease, transform 0.8s ease;
+            font-weight: 400;
+            white-space: nowrap;
+            transform: scale(1);
+        }
+
+        .nav-item:hover {
+            color: #333;
+            transform: scale(1.05);
+        }
+
+        .nav-item.active {
+            background: #fff;
+            border: 0.5px solid #ddd;
+            color: #111;
+            font-weight: 600;
+            transform: scale(1.05);
+        }
+
+        /* ── Hero ── */
+        .hero {
+            padding: 40px 60px 48px;
+            max-width: 860px;
+        }
+
+        .section {
+            padding: 48px 60px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .section+.section {
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: #111;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        .section-content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #444;
+            max-width: 760px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 600;
+            line-height: 1.1;
+            color: #111;
+            margin-bottom: 8px;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        .hero .subtitle {
+            font-size: 38px;
+            font-weight: 500;
+            line-height: 1.2;
+            color: #aaa;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        .hero .subtitle em {
+            font-style: italic;
+            color: #aaa;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        /* ── CTA Row ── */
+        .cta-row {
+            display: flex;
+            align-items: center;
+            margin-top: 36px;
+            gap: 10px;
+            border: 1px solid #e8e8e8;
+            padding: 8px;
+            border-radius: 999px;
+            width: fit-content;
+        }
+
+        .cta-btn {
+            background: #111;
+            color: #fff;
+            border: none;
+            padding: 16px 28px;
+            border-radius: 999px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            white-space: nowrap;
+            z-index: 1;
+        }
+
+        .cta-status {
+            border-radius: 999px;
+            padding: 14px 24px 14px 32px;
+            margin-left: -16px;
+            font-family: Arial, sans-serif;
+        }
+
+        .cta-status .status-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #111;
+        }
+
+        .cta-status .status-sub {
+            font-size: 13px;
+            color: #999;
+            margin-top: 2px;
+        }
+
+        /* ── Divider ── */
+        .divider {
+            /* border: 1px solid #111;*/
+            border-top: 0.5px solid #111;
+        }
+
+        .section h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #111;
+            letter-spacing: 0.05em;
+            font-family: Arial, sans-serif;
+        }
+
+        .section p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 20px;
+
+            text-align: justify;
+        }
+
+        .section-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+
+        }
+
+        .section-table tr {
+            border-bottom: 2px solid #ccc;
+        }
+
+        .section-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .section-table td {
+            padding: 18px 0;
+            vertical-align: middle;
+        }
+
+        .section-table td:first-child {
+            font-weight: 600;
+            color: #111;
+        }
+
+        .designation {
+            font-weight: 400;
+            opacity: 0.7;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            background: #408A71;
+            padding: 40px 60px;
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-link:hover {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="nav-wrap">
+        <nav class="nav-pill">
+            <a class="nav-item" href="index.html">Home</a>
+            <a class="nav-item" href="work.html">Work</a>
+            <a class="nav-item active" href="about.html">About</a>
+        </nav>
+    </div>
+
+    <section class="section">
+        <h4>ABOUT ME</h4>
+        <p>I'm a passionate software engineer with a strong focus on data science, specializing in Generative AI,
+            Natural Language Processing, Machine Learning, and Computer Vision. I'm passionate about building
+            intelligent systems that can understand, process, and generate insights from diverse data
+            types—whether it's text, images, videos, or structured datasets. My work revolves around turning complex
+            data into meaningful, scalable solutions.
+        </p>
+
+        <p>Throughout my journey, I've developed robust backend systems using Python frameworks like FastAPI, Flask, and
+            WebSockets, enabling seamless integration of AI models into real-world applications. I enjoy working across
+            the full
+            lifecycle of AI solutions—from data processing and model development to deployment and optimization.
+            Recently, I've been
+            deeply involved in fine-tuning models for custom use cases and designing multi-agent systems and workflows
+            that enhance
+            automation and decision-making.
+        </p>
+
+        <p>I thrive on exploring new technologies and pushing beyond traditional boundaries, rather than limiting myself
+            to a
+            single domain or data type. Continuous learning and experimentation are at the core of my approach, allowing
+            me to stay
+            aligned with the rapidly evolving AI landscape.
+        </p>
+
+        <p>
+            Beyond development, I actively explore emerging trends in AI, experiment with evolving architectures, and
+            continuously refine systems to make them more efficient, adaptive, and impactful. I mentor students from my
+            postgraduate program (CDAC Mumbai), guiding them in building a strong foundation in Big Data and Machine
+            Learning through
+            structured learning, hands-on practice, and project-based exposure. I find it rewarding to support their
+            growth by bridging the gap between theoretical understanding and real-world application. Ultimately, my goal
+            is to build intelligent, scalable solutions while contributing to the growth of aspiring professionals in
+            the data and AI ecosystem.
+        </p>
+
+
+    </section>
+
+    <section class="section">
+        <h4>EXPERIENCE</h4>
+        <hr class="divider">
+        <table class="section-table">
+            <tr>
+                <td>
+                    Neosoft Technologies<br><span class="designation">Software Engineer (Data Science)</span>
+                </td>
+                <td>2023-Present</td>
+            </tr>
+            <tr>
+                <td>
+                    Zensar Technologies Private Limited<br><span class="designation">Junior Software Engineer</span>
+                </td>
+                <td>2022-2022</td>
+            </tr>
+        </table>
+        <hr class="divider">
+    </section>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a class="footer-link" href="https://linkedin.com/in/yogesh-kolate-b901a21b4" target="_blank"
+                title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a class="footer-link" href="https://instagram.com/k_yogi7?igsh=dXN2ampyczZ0bmZj" target="_blank"
+                title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a class="footer-link" href="https://x.com/yogesh_kolate" target="_blank" title="X"><i
+                    class="fab fa-x-twitter"></i></a>
+            <a class="footer-link" href="mailto:yogesh1199@outlook.com" title="Email"><i
+                    class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function setActive(el) {
+            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+            el.classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>

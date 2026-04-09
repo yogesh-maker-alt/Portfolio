@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Work — Yogesh.website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f2f2f0;
+            color: #111;
+            font-family: Georgia, 'Times New Roman', serif;
+            min-height: 100vh;
+        }
+
+
+        .nav-wrap {
+            display: flex;
+            justify-content: center;
+            padding: 24px 0 16px;
+        }
+
+        .nav-pill {
+            display: flex;
+            align-items: center;
+            background: #f2f2f0;
+            border: 0.5px solid #ddd;
+            border-radius: 999px;
+            padding: 6px 8px;
+            gap: 2px;
+        }
+
+        .nav-item {
+            padding: 8px 20px;
+            border-radius: 999px;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            color: #999;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            background: transparent;
+            transition: background-color 0.8s ease, color 0.8s ease, border-color 0.8s ease, transform 0.8s ease;
+            font-weight: 400;
+            white-space: nowrap;
+            transform: scale(1);
+        }
+
+        .nav-item:hover {
+            color: #333;
+            transform: scale(1.05);
+        }
+
+        .nav-item.active {
+            background: #fff;
+            border: 0.5px solid #ddd;
+            color: #111;
+            font-weight: 500;
+            transform: scale(1.05);
+        }
+
+        .section {
+            padding: 48px 60px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+
+
+        .section+.section {
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: #111;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        .section-content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #444;
+            max-width: 760px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1.1;
+            color: #111;
+            margin-bottom: 8px;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        /* ── Sub Navbar ── */
+        .sub-nav-wrap {
+            display: flex;
+            justify-content: center;
+            padding: 16px 0;
+        }
+
+        .sub-nav-pill {
+            display: flex;
+            align-items: center;
+            background: #f2f2f0;
+            border: 0.5px solid #ddd;
+            border-radius: 999px;
+            padding: 6px 8px;
+            gap: 2px;
+        }
+
+        .sub-nav-item {
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            color: #999;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            transition: background-color 0.8s ease, color 0.8s ease, transform 0.8s ease;
+            font-weight: 400;
+            white-space: nowrap;
+            transform: scale(1);
+        }
+
+        .sub-nav-item:hover {
+            color: #333;
+            transform: scale(1.05);
+        }
+
+        .sub-nav-item.active {
+            background: #fff;
+            border: 0.5px solid #ddd;
+            color: #111;
+            font-weight: 500;
+            transform: scale(1.05);
+        }
+
+        /* ── Projects Table ── */
+        .projects-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 24px;
+        }
+
+        .projects-table td {
+            padding: 16px;
+            text-align: center;
+        }
+
+        .project-item {
+            display: inline-block;
+            text-align: left;
+            max-width: 400px;
+        }
+
+        .project-item:hover {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+
+        .project-image {
+            width: 100%;
+            max-width: 400px;
+            height: 200px;
+            background: #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .project-desc {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #444;
+            text-align: justify;
+        }
+
+        .project-category {
+            display: none;
+        }
+
+        .project-category.active {
+            display: block;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            background: #408A71;
+            padding: 40px 60px;
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-link:hover {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav-wrap">
+        <nav class="nav-pill">
+            <a class="nav-item" href="index.html">Home</a>
+            <a class="nav-item active" href="work.html">Work</a>
+            <a class="nav-item" href="about.html">About</a>
+        </nav>
+    </div>
+
+    <!-- <header>
+        <h1 class="page-title">Work</h1>
+        <p class="page-copy">Some projects I've shipped ranging between brand and product.</p>
+    </header> -->
+    <section class="section hero">
+        <h2>
+            Work
+        </h2>
+
+        <p>
+            Projects That Turn Ideas Into Reality.
+        </p>
+    </section>
+
+    <section class="section projects">
+        <div class="sub-nav-wrap">
+            <nav class="sub-nav-pill">
+                <button class="sub-nav-item active" onclick="setSubActive(this, 'all')">All</button>
+                <button class="sub-nav-item" onclick="setSubActive(this, 'firm')">Companies</button>
+                <button class="sub-nav-item" onclick="setSubActive(this, 'transit')">In Transit</button>
+            </nav>
+        </div>
+
+        <div id="all" class="project-category active">
+            <table class="projects-table">
+                <tr>
+                    <td>
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img src="D:\Yogesh\My_Projects\Personal-Website\images\voice_bot.png"
+                                    alt="Project Image 1"
+                                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="project-desc">A multi-agent voice bot using LangGraph with specialized AI agents
+                                for order tracking, PNR tracking, flight status,
+                                refunds, and invoice queries, enabling autonomous customer service automation.
+                                Integrated ASR and TTS modules for natural voice interactions, reducing response latency
+                                from 8-10 seconds to under 2
+                                seconds through pipeline optimization.
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img src="D:\Yogesh\My_Projects\Personal-Website\images\transcript_analysis.png"
+                                    alt="Project Image 2"
+                                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="project-desc">An NLP-based automated quality assurance system to analyze
+                                2,000-3,000 call transcripts per cycle, evaluating compliance
+                                across 15-34 quality parameters for multiple clients.
+                                Achieved 88-90% classification accuracy using BERT and zero-shot classification through
+                                an end-to-end pipeline including
+                                preprocessing, tokenization, and feature engineering.</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img src="D:\Yogesh\My_Projects\Personal-Website\images\video_analytics.png"
+                                    alt="Project Image 3"
+                                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="project-desc">A real-time video analytics pipeline processing 3-4 simultaneous
+                                RTSP camera streams at ~50 FPS using YOLO and OpenCV
+                                for person detection, gender classification, and age estimation.
+                                Deployed across a retail store with multiple camera locations, enabling live footfall
+                                tracking and customer behavior
+                                analysis.
+                                Delivered actionable insights to support data-driven decisions on customer preferences
+                                and in-store optimization.</div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img src="D:\Yogesh\My_Projects\Personal-Website\images\grievance_tracker.png"
+                                    alt="Project Image 4"
+                                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="project-desc">an AI-powered grievance detection platform monitoring 1,000+
+                                suppliers across 10-15 news sources daily, using GPT-based
+                                models for automated grievance analysis and risk classification.
+                                Automated supply chain compliance monitoring with scheduled pipelines, significantly
+                                reducing manual effort in reviewing
+                                and mapping articles to suppliers.
+                                Enabled scalable, real-time risk tracking to support faster and more informed
+                                decision-making.</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img src="D:\Yogesh\My_Projects\Personal-Website\images\ducati_dashboard.png"
+                                    alt="Project Image 5"
+                                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="project-desc">an AI-powered chatbot with a live dashboard to analyze customer
+                                interactions, extract insights, and generate dynamic
+                                reports and visualizations.
+                                Enabled end-to-end customer engagement including bike discovery, image recommendations,
+                                test ride bookings, and
+                                personalized quotation generation.
+                                Delivered actionable analytics on customer preferences and requirements to support sales
+                                and decision-making.</div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img src="D:\Yogesh\My_Projects\Personal-Website\images\quality_score_prediction.png"
+                                    alt="Project Image 6"
+                                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="project-desc">An NLP + ML-based model to predict quality scores for
+                                customer–agent conversations, enabling automated evaluation of
+                                interaction quality.
+                                Transformed unstructured transcripts into meaningful features using advanced NLP
+                                techniques to drive accurate score
+                                prediction.
+                                Provided a scalable metric to monitor and improve overall conversation quality and agent
+                                performance.</div>
+                        </div>
+                    </td>
+
+                </tr>
+
+
+            </table>
+        </div>
+
+        <div id="firm" class="project-category">
+            <table class="projects-table">
+                <tr>
+                    <td>
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img src="D:\Yogesh\My_Projects\Personal-Website\images\zensar.png"
+                                    alt="Project Image 6"
+                                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="project-desc">Zensar Technologies Private Limited</div>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img src="D:\Yogesh\My_Projects\Personal-Website\images\neosoft.png"
+                                    alt="Project Image 6"
+                                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="project-desc">Neosoft Technologies</div>
+                        </div>
+                    </td>
+                </tr>
+
+
+
+            </table>
+        </div>
+
+        <div id="transit" class="project-category">
+            <table class="projects-table">
+                <tr>
+                    <td>
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img src="D:\Yogesh\My_Projects\Personal-Website\images\voice_bot.png"
+                                    alt="Project Image 1"
+                                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="project-desc">A multi-agent voice bot using LangGraph with specialized AI agents
+                                for order tracking, PNR tracking, flight status,
+                                refunds, and invoice queries, enabling autonomous customer service automation.
+                                Integrated ASR and TTS modules for natural voice interactions, reducing response latency
+                                from 8-10 seconds to under 2
+                                seconds through pipeline optimization.
+                            </div>
+                        </div>
+                    </td>
+
+                    <!-- <td>
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img src="D:\Yogesh\My_Projects\Personal-Website\images\voice_bot.png"
+                                    alt="Project Image 1"
+                                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="project-desc">A multi-agent voice bot using LangGraph with specialized AI agents
+                                for order tracking, PNR tracking, flight status,
+                                refunds, and invoice queries, enabling autonomous customer service automation.
+                                Integrated ASR and TTS modules for natural voice interactions, reducing response latency
+                                from 8-10 seconds to under 2
+                                seconds through pipeline optimization.
+                            </div>
+                        </div>
+                    </td> -->
+                </tr>
+
+            </table>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a class="footer-link" href="https://linkedin.com/in/yogesh-kolate-b901a21b4" target="_blank"
+                title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a class="footer-link" href="https://instagram.com/k_yogi7?igsh=dXN2ampyczZ0bmZj" target="_blank"
+                title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a class="footer-link" href="https://x.com/yogesh_kolate" target="_blank" title="X"><i
+                    class="fab fa-x-twitter"></i></a>
+            <a class="footer-link" href="mailto:yogesh1199@outlook.com" title="Email"><i
+                    class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function setActive(el) {
+            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+            el.classList.add('active');
+        }
+
+        function setSubActive(el, category) {
+            document.querySelectorAll('.sub-nav-item').forEach(i => i.classList.remove('active'));
+            el.classList.add('active');
+            document.querySelectorAll('.project-category').forEach(c => c.classList.remove('active'));
+            document.getElementById(category).classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>
